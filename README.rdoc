@@ -1,0 +1,32 @@
+= WhyNot?
+
+not_empty?, not_blank?, ... why_not?  Tired of writing !array.empty?  Ruby is ledgible and should be more ledgible.  Ruby is terse and should be terser.  A predicate method is one that returns a boolean and ends in a question mark.  This simple library adds corresponding negation methods for all Ruby predicate methods.
+
+== Resources
+
+Install
+
+* sudo gem install why_not
+
+Use
+
+* require 'why_not'
+
+	
+== Usage
+
+In general
+
+  array = %w(one two three)
+  array.empty?  # => false
+  array.not_empty? # => true
+
+  value = nil
+  value.nil? # => true
+  value.not_nil? # => false
+
+
+== Dependencies
+
+* rubygems
+* meta_programming
