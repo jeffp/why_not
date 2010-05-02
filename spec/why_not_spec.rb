@@ -2,6 +2,22 @@ require 'spec_helper'
 require 'lib/why_not'
  
 describe "WhyNot" do
+  describe "/^is(nt|_not)_.+\?$/ method" do
+    it "should work for isnt_a? method" do
+      [].isnt_a?(Array).should be_false
+      [].isnt_a?(String).should be_true
+    end
+    it "should work for is_not_a? method" do
+      [].is_not_a?(Array).should be_false
+      [].is_not_a?(String).should be_true
+    end
+    it "should raise error for is_not_azzz?" do
+      lambda { [].is_not_azzz?(Array) }.should raise_exception(NoMethodError)
+    end
+    it "should raise error for isnt_azzz?" do
+      lambda { [].isnt_azzz?(Array) }.should raise_exception(NoMethodError)
+    end
+  end
   describe "/^not_.*\?$/ method" do
     it "should work for empty? method on arrays" do
       array = []

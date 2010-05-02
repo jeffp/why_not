@@ -13,7 +13,7 @@ spec = Gem::Specification.new do |s|
   s.description = 'not_empty?, not_blank?, not_defined? ... why not?  This is Ruby, come on.'
   s.summary = 'Comprehensive negation for all Ruby predicate methods.'
 
-  s.add_dependency('meta_programming', '>= 0.0.2')
+  s.add_dependency('meta_programming', '>= 0.0.6')
   
   exclude_folders = '' # 'spec/rails/{doc,lib,log,nbproject,tmp,vendor,test}'
   exclude_files = [] # FileList['**/*.log'] + FileList[exclude_folders+'/**/*'] + FileList[exclude_folders]
@@ -49,11 +49,6 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('README.rdoc', 'LICENSE', 'lib/**/*.rb')
 end
 
-desc 'Clean up gem build.'
-task :clean do
-  FileUtils.rm_f Dir.glob('*.gem')
-end
- 
 desc 'Generate a gemspec file.'
 task :gemspec do
   File.open("#{spec.name}.gemspec", 'w') do |f|

@@ -25,6 +25,9 @@ In general
   value.nil? # => true
   value.not_nil? # => false
 
+  [].is_not_a?(Array) # => false
+  [].isnt_a?(String) # => true
+
 
 == Dependencies
 
